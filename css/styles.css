@@ -7,7 +7,7 @@ body {
     width: 90%;/* Reduce width to give 5% on either side */
     margin: auto;/* Center container using 10% from width above */
 }
-form {
+.form {
     height: 10%;
     text-align: center;
     padding: 3% 0% 1.5% 0%;/* T R B L */
@@ -19,16 +19,28 @@ input[type="text"] {
     border: solid 1px grey;
     border-radius: 5px;
 }
-.thumbnail-grid {
+.gallery {
     height: 82%;
     /* 100% - container MINUS 10% form = gallery 90% (deduct 6% for illusion of padding top and bottom) */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     column-gap: 2.5%;
     row-gap: 5%;
+    text-align: center;
 }
-.thumbnail {
-    border: 1px black solid;
-    margin: 0;
-    border-radius: 1px;
+
+a {
+    transition: transform 1.5s ease-out;
+    animation: fadeIn 1s 2.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-175px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
